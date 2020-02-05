@@ -24,38 +24,6 @@ def l1_loss(y_true,y_pred):
 def l1_loss(y_true,y_pred):
     return K.mean(K.square(y_pred-y_true))
 
-#perceptual loss 100
-def perceptual_loss_100(y_true,y_pred):
-    return 100*perceptual_loss(y_true,y_pred)
-
-#perceptual loss
-def perceptual_loss(y_true,y_pred):
-    return perceptual_loss_fixed
-
-def perceptual_loss_fixed(y_true,y_pred):
-    vgg=vgg19(include=False,weigt='imagenet',input_shape=image_shape)
-
-    loss_model_1=Model(inputs=vgg.input, outputs=vgg.get_layer('block1_conv2').output)
-    loss_model_2=Model(inputs=vgg.input, outputs=vgg.get_layer('block2_conv2').output)
-    loss_model_3=Model(inputs=vgg.input, outputs=vgg.get_layer('block3_conv4').output)
-    loss_model_4=Model(inputs=vgg.input, outputs=vgg.get_layer('block4_conv4').output)
-    loss_model_5=Model(inputs=vgg.input, outputs=vgg.get_layer('block5_conv4').output)
-
-    loss_model_1.trainable=False
-    loss_model_2.trainable=False
-    loss_model_3.trainable=False
-    loss_model_4.trainable=False
-    loss_model_5.trainable=False
-
-#L1 lossで，context lossを計算
-    p1=K.mean(K.abs(loss_model_1(y_true) - loss_model_1(y_pred)))
-    p2=K.mean(K.abs(loss_model_2(y_true) - loss_model_1(y_pred)))
-    p3=K.mean(K.abs(loss_model_3(y_true) - loss_model_1(y_pred)))
-    p4=K.mean(K.abs(loss_model_4(y_true) - loss_model_1(y_pred)))
-    p5=K.mean(K.abs(loss_model_5(y_true) - loss_model_1(y_pred)))
-
-    return p1+p2+p3+p4+p5
-
 #binary focal loss
 # Focal loss function
 def focal_loss(y_true, y_pred):
@@ -83,7 +51,6 @@ def categorical_focal_loss(y_true, y_pred):
 
 alpha=0.25
 gamma=2.0
-
 
     """
     Softmax version of focal loss.
