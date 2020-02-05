@@ -112,7 +112,12 @@ In this paper, Octave Residual UNet is capable of extracting and decoding hierar
 %The input image is encoded into a compact representation.The Decoder part recovers the representations to a pixel-wise categorization.The Bridge part connect the encoding and decoding paths.  All of the three parts are built with residual units that consist of two $3\times3$ OctConv layer and an identity mapping.
 %できたらこれもかく．
 %各ステップのパラメータと出力サイズを表に示す．
-
+\begin{figure*}[t]
+\begin{center}
+\includegraphics[width=180mm]{fig3.eps}
+\caption{OctConv;Green lines indicate intra-frequency,Red lines indicate inter-frequency }
+\end{center}
+\end{figure*}
 
 
 %Zhunら[]は，OctConv blockを使用したUNetを提案し，特徴マップからmultifrequency featureを抽出したエンコーダをスキップコネクションを介して表現力が低いデコーダにアクセスすることで，従来法のUNetよりも高精度に細部をセグメンテーションできることを示した．本手法は，彼らの研究をベースにしている．
@@ -161,6 +166,20 @@ where TP, FP, FN denote the true positive,false positive and false negative numb
 \section{Conclusion}
 \label{sec:con}
 
+\begin{table*}[htb]
+\begin{center}
+\caption{値段表}
+ \begin{tabular}{|c|c|c||c|}\hline
+     メニュー & サイズ & 値段 & カロリー \\ \hline \hline
+    牛丼 & 並盛 & 500円 & 600 kcal \\
+    牛丼 & 大盛 & 1,000円 & 800 kcal \\
+    牛丼 & 特盛 & 1,500円 & 1,000 kcal \\ \hline
+    牛皿 & 並盛 & 300円 & 250 kcal \\
+    牛皿 & 大盛 & 700円 & 300 kcal \\
+    牛皿 & 特盛 & 1,000円 & 350 kcal \\ \hline
+     \end{tabular}
+     \end{center}
+\end{table*}
 
 \vfill\pagebreak
 
