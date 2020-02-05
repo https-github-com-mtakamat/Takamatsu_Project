@@ -6,11 +6,7 @@ Deep Octave Residual U-Netを提案し，ブラー内視鏡画像中から，高
 
 ## 学会発表目標
 [IEEE International Workshop on MACHINE LEARNING FOR SIGNAL PROCESSING](https://ieeemlsp.cc/)
-Paper submission deadline:
-April 19, 2020
-Decision notification:
-June 30, 2020
-Camera-ready paper deadline:
-July 25, 2020
-Advance registration deadline:
-August 22, 2020
+- Paper submission deadline:April 19, 2020
+- Decision notification:June 30, 2020
+- Camera-ready paper deadline:July 25, 2020
+- Advance registration deadline:August 22, 2020
