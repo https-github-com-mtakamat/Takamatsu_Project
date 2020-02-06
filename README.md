@@ -3,7 +3,7 @@
 
 ## 現在の研究プロジェクト(2020年前半)
 Deep Octave Residual U-Netを提案し，ブラー内視鏡画像中から，高精度でポリープをセマンティックセグメンテーションすることを研究対象としている．
-
+作成中の原稿は[ここ](https://github.com/https-github-com-mtakamat/Takamatsu_Project/blob/master/template/Template.pdf)で確認できる
 ## 学会発表目標
 - 論文が出来上がり次第，ArXivに投稿する．
 
