@@ -144,7 +144,9 @@ where $\alpha_t$ is a balanced variant of the focal loss，$\gamma$ is the smoot
 \item {\bf CVC-ColonDB} contains 379 frames from 15 different colonoscopy sequences,where each sequence shows at least one polyp each.
 \item {\bf ETIS-LaribPolypDB} contains 196 images, where all images show at one polyp. 
 \end{itemize}
-\(2)\){\it Preprocessing:}非有益な画像を多く含まれている画像のみからデータセットを作成するために，ラプラシアンフィルタのピクセル強度の分散から有益か非有益かを識別する．本稿では，OpenCVの{\it Variance$\_$of$\_$laplacian}関数を使用する．分散の閾値は$100$である．\\
+\(2)\){\it Preprocessing:}本研究のPreprocessing処理は，主に3つある．1つ目は，画像サイズを$256\times256$に変更し，グレースケールに変換する．2つ目は，内視鏡画像のコントラストが低いため，コントラストを制限する適応ヒストグラム均等化(CLAHE)操作をする，CLAHE操作を実行して，グレースケール画像を正規化するusing equ.x，\begin{equation}
+I=\frac{I-\mu}{\sigma}
+\end{equation}，where $\mu$ and $\sigma$ are the mean and standard deviation of the grayscale image$I$. 画像のコントラストを向上させる．3つ目は，非有益な画像を多く含まれている画像のみからデータセットを作成するために，ラプラシアンフィルタのピクセル強度の分散から有益か非有益かを識別する．本稿では，OpenCVの{\it Variance$\_$of$\_$laplacian}関数を使用する．分散の閾値は$100$である．\\
 \(3)\){\it Data Augmentation:} Data augmentation is used to artificially increase the size of the training dataset both image and label. Augmentation methods commonly employ transformations such as rotations, reflections, and elastic deformations, which produce training images that resemble one particular training example.
 \begin{figure*}[t]
 \begin{center}
@@ -177,7 +179,7 @@ where TP, FP, FN denote the true positive,false positive and false negative numb
 Preprocessingによる，ブラー画像の枚数は，表に示す．
 \section{Conclusion}
 \label{sec:con}
-
+In this paper, we proposed a U-net like model with Octave Convolution layer 
 
 %\begin{table*}[htb]
 %\begin{center}
