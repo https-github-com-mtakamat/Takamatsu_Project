@@ -61,7 +61,12 @@ Multi frequency extraction, semantic segmentation.
 \section{Introduction}
 \label{sec:intro}
 大腸がん（CRC）は，世界中でがんによる死亡の3番目の原因である[1]．CRCは，最初は良性の腺腫性ポリープ（腺腫）から発生するが，時間が経つにつれて，それらのいくつかは悪性になる．CRCの生存率は，検出された段階に依存し，I期の95$\%$の高い割合から，治療をせずに放置をしたIVおよびV期には35$\%$より低い割合に低下し致命的になる[]．したがって，早期に病変やポリープを検出することがCRCの予防には不可欠である[]．現在，CRC関連の死亡率を減らすための標準的なアプローチは，ポリープを探すために定期的なスクリーニングを実施することであり，大腸内視鏡検査が最適なスクリーニングツールであり，臨床医はポリープを探すために腸壁を視覚的に検査する．しかしながら，内視鏡医が限られた時間内で大量の画像を読影しなければならず非常に負担が大きく，内視鏡医の誤検出率は約25$\%$[]と誤検出が起こりやすい．近年になり，ポリープのセグメンテーションは，慎重に検査するべき潜在的な病変で覆われている領域を定義するため，臨床医が除去する可能性を高めることやポリープ検出のような弱い探索はポリープの見落としにつながる可能性があるため，内腔のセグメンテーションは探索された結腸壁の程度に関連する品質指標を確立するために使用できることから，内腔内のポリープにセグメンテーションをする研究が行われている．
-
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=80mm]{fig0.eps}
+\caption{}
+\end{center}
+\end{figure}
 大腸内視鏡ビデオは，キャプチャ中，腸壁が常に動き揺れているため，観察を妨げる強いボケのあるビデオをキャプチャすることがよくあり，長時間，病変に焦点を合わせ続けることが困難である．そのため，内視鏡画像には多くの弱いエッジ，テクスチャのない領域，ぼやけた領域をもつ画像が存在し，診断のパフォーマンスを大幅に妨げる．今までは，エッジ情報が豊富なシャープ画像でしかポリープの形状をセグメンテーションすることしかできなかった[]，しかしながら，臨床医が実際に使用する際にはノイズにロバストなセグメンテーションができることが重要である．この作業では，激しいモーションによって引き起こされた弱いエッジ領域やぼやけた領域からも内腔内の輪郭を正確に検出し，セグメンテーションをするはじめての研究である．
 
 セマンティックセグメンテーションでは効果的に解決するために，低レベルな特徴マップを高レベルの特徴マップと組み合わせて正確なローカライズを可能にする設計が重要である[23,24]．したがって，U-netライクなネットワークで，多くのセグメンテーションタスクが取り組まれてきた．この作業では，ノイズが多い内腔内の画像からポリープの形状を正確にセグメンテーションする効果的な方法を提案する．\(1)\)画像中の複数の空間周波数特性に注目し，vanilla convolutionをOctave Convolution(OctConv)に置き換え，Residual UNetに組み込むことで，階層的特徴をデコードする．\(2)\)U-netライクなネットワークで一般的に使われているクロスエントロピー損失関数ではなく，Focal lossに変更することで，不均衡なセマンティッククラスを解消し，セグメンテーションの精度を向上させる．For example, 内視鏡のラベルでは，ポリープのピクセルは，non-polypのピクセルよりも圧倒的に小さくクラス間の不均衡が生じている．
@@ -89,6 +94,7 @@ The more layers of the network, the richer the features that can be extracted. H
 \begin{aligned} \mathbf{y}_{l} &=h\left(\mathbf{x}_{l}\right)+\mathcal{F}\left(\mathbf{x}_{l}, \mathcal{W}_{l}\right)\\ \mathbf{x}_{l+1} &=f\left(\mathbf{y}_{l}\right) \end{aligned},
 \end{equation}
 where $\mathbf{x}_{l}$ and $\mathbf{x}_{l+1}$ are the input and output of the ${l}$th residual unit, $\mathcal{F}$ is the residual function, $f\left(\mathbf{y}_{l}\right)$ is the activation function, and $h$ is an identity mapping function, that is $h\left(\mathbf{x}_{l}\right)=\mathbf{x}_{l}$. He et al. []は，residual unitの様々な組み合わせの影響に関する詳細な実験を行い，図に示すfull preactivation resiaual unitを提案した．本稿では， full preactivation resiaual unitを使用してOctave Residual Unetを構築する．
+
 \begin{figure}[t]
 \begin{center}
 \includegraphics[width=80mm]{fig1.eps}
@@ -102,9 +108,11 @@ where $\mathbf{x}_{l}$ and $\mathbf{x}_{l+1}$ are the input and output of the ${
 \caption{Residual Unit}
 \end{center}
 \end{figure}
+
 \subsection{Octave Residual UNet}
 %OctResUNetのネットワークアーキテクチャについて説明する
 In this section, Octave UNetとresidual neural networkの両方を組み合わせたencoder-decoder based neural network architecture named Octave Residul UNetを提案する [ , , ]．Residual UNetの大きな利点は，residual unitおよびUnetのスキップコネクションは，情報の伝播を促進し，はるかに少ないパラメータでneural networkを設計できる上に，他のセメンティックセグメンテーションと同等の優れたパフォーマンスを達成できることである[ road,skin ]．
+
 In this paper, Octave Residual UNet is capable of extracting and decoding hierarchical multifrequency features for  segmentation polyps from blur endoscope images. Octave Residual UNet consists of 9 levels architecture,the part of Encoder, Decoder (see Fig.2).
 %ここからOctave ResUnetの詳細について書く
 図のように複数のエンコーダブロックを積み重ねると，滑らかに変化する構造を表す低空間周波数成分と急速に変化する詳細を表す高空間周波数成分の両方を取得できる階層型マルチ周波数特徴を抽出できる．図に示すように，特徴をエンコーディングするプロセスで，特徴マップの空間次元が徐々に減少するため，the feature maps lose spatial details and location information. Skip connections  is adopted to concatenate low level location information rich features to the inputs of decoder blocks. The stack of decoder block recovers spatial details and local information. All of the two parts are built with residual units that consist of two $3\times3$ OctConv layer and an identity mapping.
@@ -112,22 +120,26 @@ In this paper, Octave Residual UNet is capable of extracting and decoding hierar
 %The input image is encoded into a compact representation.The Decoder part recovers the representations to a pixel-wise categorization.The Bridge part connect the encoding and decoding paths.  All of the three parts are built with residual units that consist of two $3\times3$ OctConv layer and an identity mapping.
 %できたらこれもかく．
 %各ステップのパラメータと出力サイズを表に示す．
-\begin{figure*}[t]
-\begin{center}
-\includegraphics[width=180mm]{fig3.eps}
-\caption{OctConv;Green lines indicate intra-frequency,Red lines indicate inter-frequency }
-\end{center}
-\end{figure*}
-
 
 %Zhunら[]は，OctConv blockを使用したUNetを提案し，特徴マップからmultifrequency featureを抽出したエンコーダをスキップコネクションを介して表現力が低いデコーダにアクセスすることで，従来法のUNetよりも高精度に細部をセグメンテーションできることを示した．本手法は，彼らの研究をベースにしている．
-
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=60mm]{fig4.eps}
+\caption{}
+\end{center}
+\end{figure}
 
 \subsection{Loss Function}
 Deep Learningの最適化は，損失関数によってdriveする．全体的な損失を最小にするために，Neural Networkのパラメータは，逆伝播法によって更新される．セマンティックセグメンテーションタスクでは，クロスエントロピー損失が一般的に使われている．Focal lossは，学習時のクラス不均衡がone stage detectorの検出精度に悪影響を与える問題を解決するためにクロスエントロピー損失を再構成したものである．クロスエントロピー損失でトレーニングされたセグメンテーションネットワークは，polyp pixelではなくnon-polyp pixelにむけてバイアスがかかるため，polyp pixelとnon-polyp pixelのクラス不均衡が生じる．Focal loss can be illustrated as a general form  \begin{equation}
 \mathrm{FL}\left(p_{\mathrm{t}}\right)=-\left(1-p_{\mathrm{t}}\right)^{\gamma} \log \left(p_{\mathrm{t}}\right),
 \end{equation}
 where $\alpha_t$ is a balanced variant of the focal loss，$\gamma$ is the smoothly adjusts the rate at which easy examples are down weighted.
+\begin{figure*}[t]
+\begin{center}
+\includegraphics[width=180mm]{fig3.eps}
+\caption{OctConv;Green lines indicate intra-frequency,Red lines indicate inter-frequency }
+\end{center}
+\end{figure*}
 \section{Experiment and Results}
 \label{sec:res}
 \subsection{Dataset and Pre-processing}
@@ -162,7 +174,7 @@ IoU=\frac{TP}{TP+FN+FP},
 \end{equation}
 where TP, FP, FN denote the true positive,false positive and false negative numbers. This score is always between $0$ and $1$.
 \subsection{Results}
-
+Preprocessingによる，ブラー画像の枚数は，表に示す．
 \section{Conclusion}
 \label{sec:con}
 

@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.0-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2019.1.28)  6 FEB 2020 08:40
+This is e-pTeX, Version 3.14159265-p3.8.0-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2019.1.28)  6 FEB 2020 09:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -166,25 +166,24 @@ LaTeX Font Warning: Font shape `JY1/mc/bx/it' undefined
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 57.
-(I search kanjifont definition file: . . ) (I search font definition file: . .
-. . . . . )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 75.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: fig0.eps Graphic file (type eps)
+<fig0.eps> [1
+
+
+
+] (I search kanjifont definition file: . . )
+(I search font definition file: . . . . . . . )
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 80.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \vbox (badness 4084) has occurred while \output is active []
-
- [1
-
-
-
-]
-Overfull \hbox (3.64063pt too wide) detected at line 84
+Overfull \hbox (3.64063pt too wide) detected at line 89
 [][]\OML/cmm/m/it/10 ;
  []
 
 
-Underfull \hbox (badness 1742) in paragraph at lines 84--86
+Underfull \hbox (badness 1742) in paragraph at lines 89--91
 \OT1/ptm/m/n/10 where $\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT
 1/cmr/m/n/10 ; \OML/cmm/m/it/10 W\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 de-notes a 
 con-vo-lu-tion with pa-ram-e-ters
@@ -193,47 +192,55 @@ con-vo-lu-tion with pa-ram-e-ters
 File: fig1.eps Graphic file (type eps)
 <fig1.eps>
 File: fig2.eps Graphic file (type eps)
- <fig2.eps>
+ <fig2.eps> [2]
+File: fig4.eps Graphic file (type eps)
+ <fig4.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 File: fig3.eps Graphic file (type eps)
- <fig3.eps>
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 117--118
+<fig3.eps>
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 139--140
  [] 
  []
 
-[2]
 
 LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 134.
+(Font)              using `JT1/mc/m/n' instead on input line 146.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 134.
+(Font)              using `JY1/mc/m/n' instead on input line 146.
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 136.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 148.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 136.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 148.
 
-Overfull \hbox (18.36316pt too wide) in paragraph at lines 159--160
+Overfull \hbox (18.36316pt too wide) in paragraph at lines 171--172
 []$\OT1/cmr/m/n/10 2)$\OT1/ptm/m/it/10 Intersection over Union(IoU):  \OT1/ptm/
 m/n/10 In-ter-sec-tion over Union(IoU)
  []
 
-[3] [4] [5] (./Template.aux)
+[3] [4
+
+] [5
+
+] [6] (./Template.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 1390 strings out of 493281
- 16789 string characters out of 6145041
- 93720 words of memory out of 5000000
- 5316 multiletter control sequences out of 15000+600000
+ 1396 strings out of 493281
+ 16863 string characters out of 6145041
+ 92720 words of memory out of 5000000
+ 5320 multiletter control sequences out of 15000+600000
  18265 words of font info for 61 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 27i,10n,21p,1178b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,10n,21p,1178b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Template.dvi (5 pages, 22720 bytes).
+Output written on Template.dvi (6 pages, 23048 bytes).
