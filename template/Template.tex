@@ -123,6 +123,9 @@ In this paper, Octave Residual UNet is capable of extracting and decoding hierar
 %ここからOctave ResUnetの詳細について書く
 図のように複数のエンコーダブロックを積み重ねると，滑らかに変化する構造を表す低空間周波数成分と急速に変化する詳細を表す高空間周波数成分の両方を取得できる階層型マルチ周波数特徴を抽出できる．図に示すように，特徴をエンコーディングするプロセスで，特徴マップの空間次元が徐々に減少するため，the feature maps lose spatial details and location information. Skip connections  is adopted to concatenate low level location information rich features to the inputs of decoder blocks. The stack of decoder block recovers spatial details and local information. All of the two parts are built with residual units that consist of two $3\times3$ OctConv layer and an identity mapping.
 
+\subsubsection{Residual Down sampling block }
+
+\subsubsection{Residual Up sampling block }
 %The input image is encoded into a compact representation.The Decoder part recovers the representations to a pixel-wise categorization.The Bridge part connect the encoding and decoding paths.  All of the three parts are built with residual units that consist of two $3\times3$ OctConv layer and an identity mapping.
 %できたらこれもかく．
 %各ステップのパラメータと出力サイズを表に示す．
