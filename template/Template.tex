@@ -116,6 +116,13 @@ where $\mathbf{x}_{l}$ and $\mathbf{x}_{l+1}$ are the input and output of the ${
 \end{center}
 \end{figure*}
 \subsection{Octave Residual UNet}
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=90mm]{fig7.eps}
+\caption{}
+\end{center}
+\end{figure}
+The  proposed architecture adopts similar architecture consisting of two blocks placed in U-shape as shown in Fig.X. The block with green color( Fig.xx(a)) represents the residual downsampling block and the red color(Fig.cc(b)) represents residual upsampling block. 
 %OctResUNetのネットワークアーキテクチャについて説明する
 In this section, Octave UNetとresidual neural networkの両方を組み合わせたencoder-decoder based neural network architecture named Octave Residul UNetを提案する [ , , ]．Residual UNetの大きな利点は，residual unitおよびUnetのスキップコネクションは，情報の伝播を促進し，はるかに少ないパラメータでneural networkを設計できる上に，他のセメンティックセグメンテーションと同等の優れたパフォーマンスを達成できることである[ road,skin ]．
 
@@ -191,6 +198,7 @@ In this paper, we proposed a U-net like model with Octave Convolution layer
 \caption{}
 \end{center}
 \end{figure*}
+
 \vfill\pagebreak
 
 \section{REFERENCES}

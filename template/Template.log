@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.0-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2019.1.28)  7 FEB 2020 00:56
+This is e-pTeX, Version 3.14159265-p3.8.0-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2019.1.28)  12 FEB 2020 21:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -194,59 +194,62 @@ File: fig1.eps Graphic file (type eps)
 File: fig2.eps Graphic file (type eps)
  <fig2.eps>
 File: fig5.eps Graphic file (type eps)
- <fig5.eps> [2]
+ <fig5.eps>
+File: fig7.eps Graphic file (type eps)
+ <fig7.eps>
+Overfull \hbox (11.3811pt too wide) in paragraph at lines 121--122
+ [] 
+ []
+
+[2]
 
 LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 126.
+(Font)              using `JT1/mc/m/n' instead on input line 133.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 126.
+(Font)              using `JY1/mc/m/n' instead on input line 133.
 
-
-Underfull \vbox (badness 1092) has occurred while \output is active []
-
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 147.
-
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 154.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 147.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 154.
+ [3]
 File: fig3.eps Graphic file (type eps)
  <fig3.eps>
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 157--158
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 164--165
  [] 
  []
 
-[3]
-Overfull \hbox (18.36316pt too wide) in paragraph at lines 177--178
+
+Overfull \hbox (18.36316pt too wide) in paragraph at lines 184--185
 []$\OT1/cmr/m/n/10 2)$\OT1/ptm/m/it/10 Intersection over Union(IoU):  \OT1/ptm/
 m/n/10 In-ter-sec-tion over Union(IoU)
  []
 
 File: fig6.eps Graphic file (type eps)
 <fig6.eps>
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 190--191
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 197--198
  [] 
  []
 
-[4] [5] [6] (./Template.aux)
+[4] [5
+
+] [6] (./Template.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 1399 strings out of 493281
- 16900 string characters out of 6145041
+ 1402 strings out of 493281
+ 16937 string characters out of 6145041
  91720 words of memory out of 5000000
- 5322 multiletter control sequences out of 15000+600000
+ 5324 multiletter control sequences out of 15000+600000
  18265 words of font info for 61 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  27i,10n,21p,1178b,329s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Template.dvi (6 pages, 23340 bytes).
+Output written on Template.dvi (6 pages, 23816 bytes).
