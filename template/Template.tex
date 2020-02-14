@@ -168,14 +168,17 @@ I=\frac{I-\mu}{\sigma}
 \subsection{Implementation Details}
 All the models are implemented using Keras.Models are trained for 10 epochs using Adam optimizer,with a learning rate of 1e-4 and batch size 8.Experiments have been conducted with Nvidia Geforce1080 Ti GPU - 11GB RAM.
 \subsection{Evaluation Metrics}
-\(1)\){\it Segmentation  evaluation: }Jaccard index and Dice similarity score are the most commonly used evaluation metrics for segmentation.
+\(1)\){\it Segmentation  evaluation: }Jaccard index and Dice coefficient are standard metrics for comparing the pixel-wise results between predicted segmentation and ground truth.
+It is defined as: 
 \begin{equation}
-J a c c a r d(A, B)=\frac{|A \cap B|}{|A \cup B|},
+J a c c a r d(X, Y)=\frac{|X \cap Y|}{|X \cup Y|},
 \end{equation}
 
 \begin{equation}
-\operatorname{Dice}(A, B)=\frac{2|A \cap B|}{|A|+|B|},
+\operatorname{Dice}(X, Y)=\frac{2|X \cap Y|}{|X|+|Y|},
 \end{equation}
+where $X$ signifies the predicted set of pixels and $Y$ is the ground truth of the
+object to be found in the image.
 %\(2)\){\it Shape Similarity: }The shape similarity is measured by using the Hausdorff distance between the shape of segmented object and that of the ground truth object, defined as
 
 %\begin{equation}
@@ -183,11 +186,23 @@ J a c c a r d(A, B)=\frac{|A \cap B|}{|A \cup B|},
 %\end{equation}
 \(2)\){\it Intersection over Union(IoU): } Intersection over Union(IoU) is one of the standard measure performance measure for segmentation.Given a set of images, the IoU measure the similarity between the prediction and the ground truth per pixel.
 \begin{equation}
-IoU=\frac{TP}{TP+FN+FP},
+IoU=\frac{X \cap Y}{X \cup Y},
 \end{equation}
-where TP, FP, FN denote the true positive,false positive and false negative numbers. This score is always between $0$ and $1$.
+where $X$ $Y$.
+This score is always between $0$ and $1$.
 \subsection{Experimental Results}
 In this section, we evaluate the segmentation performance of the performance of the proposed Octave Residual UNet . Preprocessingによる，ブラー画像の枚数は，表に示す．
+\begin{table}[t]
+\caption{aaa}
+\begin{tabular}{ccccc}
+\cline{1-4}
+\multicolumn{1}{|c|}{aaaa} & \multicolumn{1}{c|}{aaaaa} & \multicolumn{1}{c|}{aaaaaaa} & \multicolumn{1}{c|}{aaaaa} & \multicolumn{1}{c}{} \\ \cline{1-4}
+\multicolumn{1}{|c|}{a} & \multicolumn{1}{c|}{a} & \multicolumn{1}{c|}{a} & \multicolumn{1}{c|}{a} &                      \\ \cline{1-4}
+\multicolumn{1}{|c|}{a} & \multicolumn{1}{c|}{a} & \multicolumn{1}{c|}{a} & \multicolumn{1}{c|}{a} &                      \\ \cline{1-4}
+\multicolumn{1}{|c|}{a} & \multicolumn{1}{c|}{a} & \multicolumn{1}{c|}{a} & \multicolumn{1}{c|}{a} &                      \\ \cline{1-4}
+\end{tabular}
+\end{table}
+
 \section{Conclusion}
 \label{sec:con}
 In this paper, we proposed a U-net like model with Octave Convolution layer 
